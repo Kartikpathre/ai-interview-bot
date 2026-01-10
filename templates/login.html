@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Interview Login</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+
+<div class="login-card">
+    <h2>AI Interview System</h2>
+    <p id="loginText">Candidate Login</p>
+
+    <!-- Role Switch -->
+    <div class="role-toggle">
+        <button id="userBtn" class="active">Candidate</button>
+        <button id="adminBtn">Admin</button>
+    </div>
+
+    <!-- Avatars -->
+    <div class="avatars">
+        <img src="https://i.pravatar.cc/100?img=12" class="avatar selected">
+        <img src="https://i.pravatar.cc/100?img=32" class="avatar">
+        <img src="https://i.pravatar.cc/100?img=47" class="avatar">
+    </div>
+
+    <form method="POST" onsubmit="return validateLogin()">
+        <input type="hidden" name="role" id="role" value="user">
+
+        <input type="text" name="name" id="name" placeholder="Enter your name" required>
+
+        <input type="password" name="password" id="password"
+               placeholder="Admin password" class="hidden">
+
+        <select name="type" id="type">
+            <option value="">Select Interview Type</option>
+            <option value="hr">HR Interview</option>
+            <option value="python">Python Technical</option>
+        </select>
+
+        <button class="login-btn" id="loginBtn">Start Interview</button>
+    </form>
+</div>
+
+<script src="/static/script.js"></script>
+</body>
+</html>

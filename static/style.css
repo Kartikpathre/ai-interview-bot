@@ -1,0 +1,292 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Segoe UI", sans-serif;
+}
+
+/* ===== Animated Background ===== */
+body {
+    height: 100vh;
+    background: linear-gradient(-45deg, #6366f1, #9333ea, #06b6d4, #8b5cf6);
+    background-size: 400% 400%;
+    animation: gradientBG 12s ease infinite;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+@keyframes gradientBG {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* Floating Shapes */
+.bg-shape {
+    position: absolute;
+    width: 180px;
+    height: 180px;
+    background: rgba(255, 255, 255, 0.15);
+    border-radius: 50%;
+    animation: float 10s infinite ease-in-out;
+}
+
+.shape1 { top: 10%; left: 10%; animation-delay: 0s; }
+.shape2 { bottom: 15%; right: 15%; animation-delay: 2s; }
+.shape3 { top: 50%; right: 5%; animation-delay: 4s; }
+
+@keyframes float {
+    0% { transform: translateY(0); }
+    50% { transform: translateY(-30px); }
+    100% { transform: translateY(0); }
+}
+
+/* ===== Login Card ===== */
+.login-card {
+    width: 420px;
+    background: white;
+    border-radius: 18px;
+    padding: 30px;
+    box-shadow: 0 30px 70px rgba(0,0,0,0.35);
+    z-index: 10;
+    animation: popIn 0.8s ease;
+}
+
+@keyframes popIn {
+    from {
+        opacity: 0;
+        transform: scale(0.9) translateY(40px);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1) translateY(0);
+    }
+}
+
+.login-card h2 {
+    text-align: center;
+    color: #111;
+}
+
+.login-card p {
+    text-align: center;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+/* Role Switch */
+.role-toggle {
+    display: flex;
+    background: #f1f1f1;
+    border-radius: 12px;
+    overflow: hidden;
+    margin-bottom: 20px;
+}
+
+.role-toggle button {
+    flex: 1;
+    padding: 10px;
+    border: none;
+    background: transparent;
+    cursor: pointer;
+    font-weight: 600;
+    transition: 0.3s;
+}
+
+.role-toggle button.active {
+    background: linear-gradient(135deg, #6366f1, #9333ea);
+    color: white;
+}
+
+/* Cartoon Avatars */
+.avatars {
+    display: flex;
+    justify-content: center;
+    gap: 18px;
+    margin-bottom: 20px;
+}
+
+.avatar {
+    width: 70px;
+    height: 70px;
+    border-radius: 50%;
+    background: #f3f4f6;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 36px;
+    cursor: pointer;
+    border: 3px solid transparent;
+    transition: 0.35s;
+}
+
+.avatar:hover {
+    transform: translateY(-8px) rotate(3deg);
+}
+
+.avatar.selected {
+    border-color: #6366f1;
+    background: #eef2ff;
+    transform: scale(1.15);
+}
+
+/* Inputs */
+input, select {
+    width: 100%;
+    padding: 12px;
+    margin-top: 12px;
+    border-radius: 10px;
+    border: 1px solid #ccc;
+    font-size: 15px;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    outline: none;
+    border-color: #6366f1;
+    box-shadow: 0 0 0 3px rgba(99, 102, 241, 0.2);
+}
+
+/* Button */
+.login-btn {
+    width: 100%;
+    margin-top: 22px;
+    padding: 13px;
+    border: none;
+    border-radius: 12px;
+    background: linear-gradient(135deg, #6366f1, #9333ea);
+    color: white;
+    font-size: 16px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.login-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 30px rgba(99, 102, 241, 0.4);
+}
+
+/* Hide smoothly */
+.hidden {
+    opacity: 0;
+    transform: translateY(-10px);
+    pointer-events: none;
+    transition: 0.3s;
+}
+/* RESULT PAGE */
+
+.result-wrapper {
+    min-height: 100vh;
+    background: linear-gradient(135deg, #020617, #1e293b);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.result-card {
+    width: 420px;
+    background: #020617;
+    border-radius: 22px;
+    padding: 30px;
+    box-shadow: 0 40px 90px rgba(0,0,0,0.8);
+    text-align: center;
+    animation: slideUp 0.8s ease;
+}
+
+@keyframes slideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.candidate {
+    color: #cbd5f5;
+    margin-bottom: 20px;
+}
+
+/* Score Ring */
+.score-ring {
+    width: 160px;
+    height: 160px;
+    border-radius: 50%;
+    border: 10px solid #6366f1;
+    margin: 20px auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.score-ring span {
+    font-size: 44px;
+    font-weight: bold;
+}
+
+.score-ring small {
+    color: #94a3b8;
+}
+
+/* Feedback */
+.feedback {
+    margin-top: 15px;
+    padding: 12px;
+    border-radius: 12px;
+    font-size: 14px;
+}
+
+.feedback.success {
+    background: #022c22;
+    color: #a7f3d0;
+    border-left: 4px solid #22c55e;
+}
+
+.feedback.average {
+    background: #2e2308;
+    color: #fde68a;
+    border-left: 4px solid #facc15;
+}
+
+.feedback.fail {
+    background: #3b0a0a;
+    color: #fecaca;
+    border-left: 4px solid #ef4444;
+}
+
+/* Suggestions */
+.suggestion-box {
+    background: #020617;
+    border: 1px solid #334155;
+    border-radius: 15px;
+    padding: 15px;
+    margin-top: 20px;
+    text-align: left;
+}
+
+.suggestion-box h4 {
+    color: #6366f1;
+    margin-bottom: 10px;
+}
+
+.suggestion-box ul {
+    padding-left: 18px;
+    color: #cbd5f5;
+}
+
+/* Button */
+.result-card button {
+    margin-top: 25px;
+    padding: 12px;
+    width: 100%;
+    border-radius: 30px;
+    border: none;
+    font-size: 16px;
+    cursor: pointer;
+    background: linear-gradient(135deg, #6366f1, #9333ea);
+    color: white;
+    transition: 0.3s;
+}
+
+.result-card button:hover {
+    transform: translateY(-2px);
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>AI Interview</title>
+    <link rel="stylesheet" href="/static/interview.css">
+</head>
+<body>
+
+<!-- START OVERLAY -->
+<div id="startOverlay">
+    <button onclick="initInterview()">🎤 Start Interview</button>
+</div>
+
+<div class="interview-container">
+
+    <div class="header">
+        <h2>AI Interview Session</h2>
+        <span id="status">Waiting...</span>
+    </div>
+
+    <div class="progress-bar">
+        <div id="progress"></div>
+    </div>
+
+    <div class="question-box">
+        <div class="ai-avatar">🤖</div>
+        <p id="questionText"></p>
+    </div>
+
+    <div class="answer-box">
+        <p><b>Your Answer:</b></p>
+        <p id="answerText">Listening...</p>
+    </div>
+
+    <div class="feedback-box" id="feedback">
+        Waiting for response...
+    </div>
+
+</div>
+
+<script src="/static/interview.js"></script>
+</body>
+</html>
